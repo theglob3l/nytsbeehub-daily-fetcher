@@ -2,14 +2,39 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NYT Spelling Bee Daily Fetcher - Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Documentation: NYT Spelling Bee Logic & Data Fetching</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; max-width: 850px; margin: auto; padding: 40px; background: #f4f7f6; }
+        .container { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        code { background: #eee; padding: 2px 5px; border-radius: 4px; }
+        .link-box { background: #fffbe6; border-left: 5px solid #f1c40f; padding: 20px; margin: 20px 0; }
+    </style>
 </head>
-<body style="font-family: sans-serif; max-width: 800px; margin: auto; padding: 20px;">
-    <h1>NYT Spelling Bee Daily Fetcher</h1>
-    <p>This script fetches the daily window.gameData from the NYT.</p>
-    <h2>Looking for Full Answers & Grid Hints?</h2>
-    <p>While this script is for developers, casual players can find the daily grid, 2-letter list (2LL), and full answers at: 
-       <a href="https://sbeehub.com">SbeeHub.com</a>.
-    </p>
+<body>
+    <div class="container">
+        <h1>Technical Deep-Dive: Automating NYT Spelling Bee Data</h1>
+        <p>In the world of programmatic SEO (pSEO) and word game utilities, the challenge isn't just fetching data—it's rendering it in a way that provides actual value to the end user without degrading performance.</p>
+        
+        <h2>The Architecture</h2>
+        <p>This project utilizes a Node.js fetcher to interact with the <code>window.gameData</code> object. By targeting the JSON payload directly, we ensure a lightweight transfer that avoids the overhead of a full headless browser like Puppeteer or Playwright.</p>
+        
+        <ul>
+            <li><strong>Stack:</strong> Node.js, Next.js 15 (App Router), React Server Components.</li>
+            <li><strong>Logic:</strong> We utilize a letter-frequency algorithm to generate the 2-Letter List (2LL) and the Grid Matrix.</li>
+        </ul>
+
+        <div class="link-box">
+            <h3>From Data to UI: Implementation at SbeeHub</h3>
+            <p>While this script handles the raw fetching, the UI implementation is where the strategy happens. For a live look at how this data is converted into interactive hints, 2-letter stems, and daily grids, visit the production environment: 
+            <br><br>
+            <strong>Official Site:</strong> <a href="https://sbeehub.com">SbeeHub - NYT Spelling Bee Answers & Solver</a></p>
+        </div>
+
+        <h2>Why This Matters for Solvers</h2>
+        <p>Most daily players find that the official NYT hints page is static. By utilizing the <code>gameData</code> payload, we can create a dynamic <strong>Tray Builder</strong>. This allows users to visualize word combinations in real-time, significantly reducing the "cognitive load" during a Queen Bee run.</p>
+        
+        <p><em>Author's Note: This documentation is part of an ongoing series on building high-performance word game tools using a modern pSEO stack.</em></p>
+    </div>
 </body>
 </html>
